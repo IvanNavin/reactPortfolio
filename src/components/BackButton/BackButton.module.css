@@ -1,0 +1,35 @@
+.back-button {
+    background: transparent;
+    border: none;
+    outline: transparent;
+    color: white;
+    font-size: 16px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    height: 100px !important;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.back-button p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    font-family: 'RussoOneRegular', sans-serif;
+}
+
+.back-button canvas {
+    pointer-events: none;
+}
+
+.back-button:hover {
+    cursor: pointer;
+}
+
+.canvas {
+    cursor: pointer;
+}
