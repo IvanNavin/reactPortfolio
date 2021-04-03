@@ -1,16 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import fluidEffect from './fluidEffect';
 
-import { isMobileOrTablet } from "../../utils";
-
 const Fluid = () => {
-    let canvasRef = useRef(null);
-    
+    const canvasRef = useRef(null);
+
     useEffect(() => {
         const canvas = canvasRef.current;
-
         const {
-            resizeCanvas, 
             updateKeywords, 
             initFramebuffers, 
             multipleSplats, 
@@ -21,16 +17,14 @@ const Fluid = () => {
             onTouchStart,
             onTouchMove,
             onTouchEnd,
-            onKeyDown,
-            splatStack
+            onKeyDown
         } = fluidEffect(canvas);
-
-        resizeCanvas();
+        
         updateKeywords();
         initFramebuffers();
         multipleSplats(parseInt(Math.random() * 20) + 5);
         update();
-
+        
         canvas.addEventListener('mousedown', onMouseDown);
         canvas.addEventListener('mousemove', onMouseMove);
         window.addEventListener('mouseup', onMouseUp);
@@ -38,12 +32,6 @@ const Fluid = () => {
         canvas.addEventListener('touchmove', onTouchMove);
         window.addEventListener('touchend', onTouchEnd);
         window.addEventListener('keydown', onKeyDown);
-
-        if (isMobileOrTablet()) {
-            const splatInterval = setInterval(e => {
-                splatStack.push(parseInt(Math.random() * 20) + 5);
-            }, 10000);
-        }
 
         return () => {
             canvas.removeEventListener('mousedown', onMouseDown);
@@ -53,7 +41,6 @@ const Fluid = () => {
             canvas.removeEventListener('touchmove', onTouchMove);
             window.removeEventListener('touchend', onTouchEnd);
             window.removeEventListener('keydown', onKeyDown);
-            if (isMobileOrTablet()) { clearInterval(splatInterval) }
         };
     }, []);
 

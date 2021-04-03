@@ -4,13 +4,19 @@ import {Link} from "../../routes";
 
 import s from './MyWorks.module.css';
 
+import PORTFOLIO from './assets/portfolio.png';
+import POKEDEXHOME from './assets/pokedex-home.png';
+import POKEDEXDESKTOP from './assets/pokedex-desktop.png';
+import THANOSBACK from './assets/thanos-back.jpeg';
+import THANOS from './assets/thanos.jpg';
+
 const MyWorks = () => {
     const works = {
         0: {
             name: 'Portfolio',
             status: 'New',
             link: Link.PORTFOLIO,
-            backUrl: './assets/portfolio.png',
+            backUrl: PORTFOLIO,
             frontUrl: '',
             stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
         },
@@ -18,15 +24,15 @@ const MyWorks = () => {
             name: 'Pokedex',
             status: 'in process',
             link: Link.POKEDEX,
-            backUrl: './assets/pokedex-home.png',
-            frontUrl: './assets/pokedex-desktop.png',
+            backUrl: POKEDEXHOME,
+            frontUrl: POKEDEXDESKTOP,
             stack: ['React', 'Redux', 'SSR', 'Scss', 'HookRouter', 'TS', 'Es-Lint']
         },
         2: {
             name: 'Thanos Effect',
             link: Link.THANOS,
-            backUrl: './assets/thanos-back.jpeg',
-            frontUrl: './assets/thanos.jpg',
+            backUrl: THANOSBACK,
+            frontUrl: THANOS,
             stack: ['HTML', 'CSS', 'JS', 'Canvas', 'Animations']
         },
         3: {

@@ -1,0 +1,267 @@
+.contacts {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.wrapper::before,
+.wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -271px;
+    margin-top: -191px;
+    width: 543px;
+    height: 382px;
+    background-image: url('./assets/light_dots.png');
+    background-size: 100%;
+    filter: brightness(200%);
+    pointer-events: none;
+}
+
+.wrapper::before {
+    animation: rotateStar 60s linear infinite alternate;
+}
+
+.wrapper::after {
+    animation: reRotateStar 30s linear infinite normal;
+}
+
+@keyframes rotateStar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes reRotateStar {
+    0% {
+        opacity: 1;
+        background-size: 80%;
+        transform: rotate(-180deg);
+    }
+    100% {
+        opacity: 0;
+        background-size: 280%;
+        transform: rotate(180deg);
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-top: 77px;
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait){
+    h2 {
+        margin-right: 100px;
+    }
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formBlock {
+    width: 272px;
+    min-width: 272px;
+    max-width: 272px;
+    position: relative;
+    margin: 0 0 16px 0;
+}
+
+.fld,
+.textarea {
+    width: 100%;
+    height: 48px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: transparent;
+    color: white;
+    padding: 16px;
+}
+
+.textarea {
+    min-width: 272px;
+    max-width: 272px;
+    height: 200px;
+}
+
+.lbl {
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    transform-origin: left top;
+    pointer-events: none;
+    transition: transform ease-in-out .2s,
+                opacity ease-in-out .2s,
+                top ease-in-out .2s;
+}
+
+.fld:focus {
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+[data-form="static"] .lbl,
+.fld:focus ~ .lbl,
+.fld-complete .lbl,
+.fld-focus .lbl {
+    transform: scale(0.5);
+    opacity: .5;
+    top: 7px;
+}
+
+.button {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 45px;
+    width: 100%;
+    max-width: 272px;
+    height: 48px;
+    background-color: transparent;
+    outline: transparent;
+}
+
+.button:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url("./assets/send.svg") center/cover no-repeat;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    transform: rotateZ(-45deg) rotateX(25deg) rotateY(15deg);
+    transform-origin: center;
+    transition: all 0.25s;
+}
+
+.button:hover:before {
+    border-color: white;
+    transform: rotateZ(-55deg) rotateX(5deg) rotateY(15deg);
+}
+
+.button:active {
+    top: 1px
+}
+
+.button .loader,
+.button .success,
+.button .error {
+    display: none;
+}
+
+.button.send {
+    pointer-events: none;
+}
+
+.button.sent span,
+.button.error span {
+    display: none;
+}
+
+.button.sent .success,
+.button.error .error {
+    display: inline;
+}
+
+.button.send span {
+    opacity: 0;
+    display: none;
+}
+
+.button.send:before {
+    animation:flyGrid 1s linear;
+    transform:translateX(1000px);
+}
+
+.button.load .loader {
+    display: inline-flex;
+    opacity: 1;
+    --delay: 1s;
+    animation: loader 1s var(--delay) infinite ease-in;
+}
+
+.socialLinks {
+    position: fixed;
+    top: 45px;
+    right: 65px;
+}
+
+.socialLink {
+    position: absolute;
+    opacity: 0;
+}
+
+.socialLink svg {
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.socialLinks.animate .linkedin {
+    animation: linkedin-rotate linear .4s forwards;
+}
+
+.socialLinks.animate .github {
+    animation: github-rotate .4s linear .4s forwards;
+}
+
+.socialLinks.animate .instagram {
+    animation: instagram-rotate .8s linear .4s forwards;
+}
+
+.socialLinks svg:hover {
+    animation: social-hover linear 1s infinite;
+}
+
+@keyframes linkedin-rotate {
+    to {
+        transform: translate(-80px, 0) rotate(-1080deg);
+        opacity: 1;
+    }
+}
+
+@keyframes github-rotate {
+    to {
+        transform: translate(-60px, 60px) rotate(1080deg);
+        opacity: 1;
+    }
+}
+
+@keyframes instagram-rotate {
+    to {
+        transform: translate(0px, 70px) rotate(1080deg);
+        opacity: 1;
+    }
+}
+
+@keyframes social-hover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

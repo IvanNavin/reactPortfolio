@@ -29,6 +29,8 @@ const config = {
 }
 
 function fluidEffect (canvas) {
+    resizeCanvas();
+
     function PointerPrototype () {
         this.id = -1;
         this.texcoordX = 0;
@@ -960,6 +962,7 @@ function fluidEffect (canvas) {
     let colorUpdateTimer = 0.0;
 
     function update () {
+        if (!canvas.offsetHeight) return false;
         const dt = calcDeltaTime();
         if (resizeCanvas())
             initFramebuffers();
@@ -1427,7 +1430,6 @@ function fluidEffect (canvas) {
     };
 
     return {
-        resizeCanvas, 
         updateKeywords, 
         initFramebuffers, 
         multipleSplats, 
@@ -1438,8 +1440,7 @@ function fluidEffect (canvas) {
         onTouchStart,
         onTouchMove,
         onTouchEnd,
-        onKeyDown,
-        splatStack
+        onKeyDown
     }
 };
 
