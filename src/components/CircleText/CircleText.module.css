@@ -1,0 +1,35 @@
+.a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url('../../assets/img/monk.png') center no-repeat;
+    background-size: 30px;
+    margin: 20px;
+}
+
+.svg {
+    width: 100px;
+    transition: transform linear .2s;
+}
+
+.a:hover .svg {
+    transform: rotate3d(-1, 1, 1, -65deg) scale(1.5) ;
+}
+
+.text {
+    font-size: 63px;
+    text-transform: uppercase;
+    letter-spacing: 17px;
+    fill: white;
+    transform-origin: center;
+    animation: rotate linear infinite 15s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate3d(1, 1, 1, 65deg) rotate(0);
+    }
+    to {
+        transform: rotate3d(1, 1, 1, 65deg) rotate(360deg);
+    }
+}

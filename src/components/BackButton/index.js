@@ -6,12 +6,15 @@ import cn from "classnames";
 import s from './BackButton.module.css'
 import {navigate} from "hookrouter";
 import {Link} from "../../routes";
+import { usePath } from "hookrouter";
 
 const BackButton = () => {
     const btnRayon = 50;
     const btnLineWidth = 2;
     let mousePos = {};
     const onMousemove = e => mousePos = {  x: e.clientX, y: e.clientY };
+    const path = usePath();
+    console.log(path)
 
     const createShadow = (context, angle) => {
         const rayon = btnRayon*2;

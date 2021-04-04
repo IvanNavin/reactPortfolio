@@ -143,7 +143,7 @@ h5 {
 
 .main::after {
     z-index: 0;
-    background-image: url('./assets/monk.png') !important;
+    background-image: url('../../assets/img/monk.png') !important;
     background-color: #333;
     background-blend-mode: initial;
     background-size: auto 75px;
@@ -302,7 +302,7 @@ h5 {
     display: inline-block;
     width: 100px;
     height: 100px;
-    background: url('./assets/monk.png') center no-repeat;
+    background: url('../../assets/img/monk.png') center no-repeat;
     background-size: 30px;
     margin: 20px;
 }

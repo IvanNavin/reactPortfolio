@@ -1,0 +1,13 @@
+.hrefs a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.hrefs a:not(:first-child) {
+    color: #ea0f1e;
+}
+
+iframe {
+    width: calc(100vw - 64px);
+}

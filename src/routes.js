@@ -7,6 +7,9 @@ import RegExp from "./pages/RegExp";
 import Accessibility from "./pages/Accessibility";
 import MyWorks from "./pages/MyWorks";
 import Portfolio from "./pages/Portfolio";
+import Pokedex from "./pages/Pokedex"
+import English from './pages/English';
+import Thanos from './pages/Thanos'
 
 export const Link = {
     MAINPAGE      : '/',
@@ -55,7 +58,7 @@ export const GENERAL_MENU = [
     }
 ];
 
-const PERFORMANCES_ROUTES = [
+export const PERFORMANCES_ROUTES = [
     {
         title: 'Не бойтесь Регулярных выражений',
         link: Link.REGEXP,
@@ -83,7 +86,7 @@ const WORKS_ROUTES = [
     },
     {
         link: Link.ENGLISH,
-        component: () => <AboutMe />
+        component: () => <English />
     }
 ];
 

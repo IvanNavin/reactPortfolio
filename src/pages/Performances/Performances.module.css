@@ -1,0 +1,63 @@
+.navMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 114px;
+    transform: translateY(-50%);
+}
+
+.navMenu .button span {
+    opacity: 0;
+    position: relative;
+    transition: margin ease-in-out .4s, opacity ease-in-out .4s;
+    white-space: nowrap;
+}
+
+.navMenu .button:first-child span {
+    animation: slideText 1s forwards;
+}
+
+.navMenu .button:nth-child(2) span {
+    animation: slideText 1s forwards 1s;
+}
+
+.navMenu .button:nth-child(3) span {
+    animation: slideText 1s forwards 1.5s;
+}
+
+.navMenu .button:nth-child(4) span {
+    animation: slideText 1s forwards 2s;
+}
+
+.button {
+    color: #ea0f1e;
+    font-size: 3vw;
+    display: flex;
+    align-self: flex-start;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    outline: transparent;
+}
+
+button:first-child {
+    color: #fff;
+}
+
+.navMenu .button span:hover {
+    margin-left: 40px;
+}
+
+@keyframes slideText {
+    0% {
+        opacity: 0;
+        top: 30vh
+    }
+    100% {
+        opacity: 1;
+        top: 0
+    }
+}
