@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { formManager } from './formManager'
 
 import s from './Contacts.module.css'
 import cn from 'classnames'

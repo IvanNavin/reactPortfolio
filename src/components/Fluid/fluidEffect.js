@@ -985,6 +985,7 @@ function fluidEffect (canvas) {
     function resizeCanvas () {
         let width = window.innerWidth;
         let height = window.innerHeight;
+        
         if (canvas.width !== width || canvas.height !== height) {
             canvas.width = width;
             canvas.height = height;
